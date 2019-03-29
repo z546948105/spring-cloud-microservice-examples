@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.util.regex.Pattern;
 
 /**
+ * Security 验证
  * @author Thibaud Leprêtre
  */
 @Configuration
@@ -51,13 +52,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .logout().permitAll()
             .logoutSuccessUrl("/");
     }
-
+    
+    
+    /**
+     *  获取restful方法名校验
+     * @return
+     */
     private RequestMatcher csrfRequestMatcher() {
         return new RequestMatcher() {
-            // Always allow the HTTP GET method
             private final Pattern allowedMethods = Pattern.compile("^(GET|HEAD|OPTIONS|TRACE)$");
-
-            // Disable CSFR protection on the following urls:
             private final AntPathRequestMatcher[] requestMatchers = { new AntPathRequestMatcher("/uaa/**") };
 
             @Override
@@ -75,7 +78,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             }
         };
     }
-
+    
+    /**
+     *  设置 cookie
+     * @return
+     */
     private static Filter csrfHeaderFilter() {
         return new OncePerRequestFilter() {
             @Override
@@ -92,7 +99,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             }
         };
     }
-
+    
+    /**
+     * http 设置 heaername
+     * @return
+     */
     private static CsrfTokenRepository csrfTokenRepository() {
         HttpSessionCsrfTokenRepository repository = new HttpSessionCsrfTokenRepository();
         repository.setHeaderName(CSRF_HEADER_NAME);

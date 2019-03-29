@@ -23,6 +23,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
+ *  网关和用户认证
  * @author zhangpeng
  */
 @EnableZuulProxy

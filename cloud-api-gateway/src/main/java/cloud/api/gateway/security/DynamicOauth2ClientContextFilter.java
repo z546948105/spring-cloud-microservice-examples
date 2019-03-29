@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
+ *  需要在RestOperation动作之前为OAuth2ProtectedResouceDetail设置认证属性
  * @author Thibaud Leprêtre
  */
 class DynamicOauth2ClientContextFilter extends OAuth2ClientContextFilter {
