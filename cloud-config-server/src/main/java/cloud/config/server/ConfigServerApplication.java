@@ -12,6 +12,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
+ *   自动获取外网配置文件配置
  * @author zhangpeng
  */
 @EnableDiscoveryClient
