@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.zpng</groupId>
@@ -52,22 +51,25 @@
     </properties>
 
     <dependencies>
-
+		<!-- web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- 监控 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <!-- 测试 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 </dependencies>
-
+	
+	<!-- 引入spring-cloud -->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -79,7 +81,8 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+	
+	<!-- 仓库 -->
     <repositories>
         <repository>
             <id>spring-snapshots</id>
@@ -120,6 +123,8 @@
             <url>http://maven.twttr.com/</url>
         </repository>
     </repositories>
+    
+    <!-- 仓库插件 -->
     <pluginRepositories>
         <pluginRepository>
             <id>spring-snapshots</id>

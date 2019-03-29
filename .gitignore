@@ -18,3 +18,4 @@ cloud-finagle-thrift-client/target/
 cloud-finagle-thrift-server/target/
 cloud-dummy-service/target/
 cloud-uaa-service/target/
+/.project
